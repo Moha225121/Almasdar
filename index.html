@@ -13,13 +13,29 @@
 </head>
 <body>
 
-<header class="hero">
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#vision">الرؤية</a></li>
+        <li><a href="#mission">الرسالة</a></li>
+        <li><a href="#goals">الأهداف</a></li>
+        <li><a href="#brands">العلامات</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#contact">التواصل</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero reveal" id="home">
     <img src="images/almadar-logo.png" class="logo" alt="شركة المصدر العالمية">
     <h1>شركة المصدر العالمية</h1>
     <p>لبيع وتغيير الزيوت الأمريكية</p>
 </header>
 
-<section class="about">
+<!-- ABOUT -->
+<section class="about reveal" id="about">
     <h2>من نحن</h2>
     <p>
         شركة المصدر العالمية هي وكالة معتمدة لزيوت
@@ -30,7 +46,8 @@
     </p>
 </section>
 
-<section class="vision">
+<!-- VISION -->
+<section class="vision reveal" id="vision">
     <h2>رؤيتنا</h2>
     <p>
         أن تكون شركة المصدر العالمية الخيار الأول في ليبيا
@@ -39,7 +56,8 @@
     </p>
 </section>
 
-<section class="mission">
+<!-- MISSION -->
+<section class="mission reveal" id="mission">
     <h2>رسالتنا</h2>
     <p>
         تقديم زيوت ومواد تشحيم أمريكية وعالمية أصلية
@@ -49,19 +67,21 @@
     </p>
 </section>
 
-<section class="goals">
+<!-- GOALS -->
+<section class="goals reveal" id="goals">
     <h2>أهدافنا</h2>
     <ul>
-        <li>توفير منتجات أصلية ومعتمدة من شركات عالمية.</li>
-        <li>تعزيز ثقة العملاء من خلال الجودة والمصداقية.</li>
-        <li>توسيع شبكة الفروع ومراكز الخدمة داخل ليبيا.</li>
+        <li>توفير منتجات أصلية ومعتمدة.</li>
+        <li>تعزيز ثقة العملاء.</li>
+        <li>توسيع شبكة الفروع داخل ليبيا.</li>
         <li>دعم قطاع السيارات والمعدات الثقيلة.</li>
-        <li>بناء شراكات استراتيجية طويلة الأمد.</li>
-        <li>رفع مستوى رضا العملاء وخدمات ما بعد البيع.</li>
+        <li>بناء شراكات استراتيجية.</li>
+        <li>رفع مستوى خدمات ما بعد البيع.</li>
     </ul>
 </section>
 
-<section class="brands-section">
+<!-- BRANDS -->
+<section class="brands-section reveal" id="brands">
     <h2>العلامات التجارية</h2>
     <div class="brands">
         <div class="card"><img src="images/infinity.png"><span class="badge gold">Infinity</span></div>
@@ -73,28 +93,29 @@
     </div>
 </section>
 
-<section class="products">
+<!-- PRODUCTS -->
+<section class="products reveal" id="products">
     <h2>منتجاتنا</h2>
     <div class="product-grid">
         <div class="product">زيوت محركات</div>
-        <div class="product">زيوت قير</div>
+        <div class="product">زيوت ناقل حركة (قير)</div>
         <div class="product">زيوت هيدروليك</div>
         <div class="product">سوائل فرامل</div>
-        <div class="product">إضافات المحركات</div>
         <div class="product">شحم صناعي</div>
     </div>
 </section>
 
-<section class="contact">
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
     <h2>التواصل</h2>
 
     <p><strong>📍 مقر الشركة الرئيسي:</strong><br>
         بنغازي – طريق النهر – مقابل المنطقة الصناعية
     </p>
 
-    <p><strong>🏢 فروع ومراكز تغيير الزيوت والخدمات:</strong><br>
-        • مركز شارع الثانوية الفنية بالقرب من هنقر بنغازي<br>
-        • مركز طريق النهر مقابل صالة فوناس الرياضية
+    <p><strong>🏢 فروع ومراكز الخدمة:</strong><br>
+        • شارع الثانوية الفنية قرب هنقر بنغازي<br>
+        • طريق النهر مقابل صالة فوناس الرياضية
     </p>
 
     <p><strong>📞 أرقام التواصل:</strong><br>
@@ -108,6 +129,22 @@
 </footer>
 
 <a href="https://wa.me/218919893322" class="whatsapp" target="_blank">واتساب</a>
+
+<!-- SCROLL ANIMATION -->
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < windowHeight - 80) {
+                el.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
 
 </body>
 </html>
