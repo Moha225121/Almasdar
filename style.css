@@ -564,3 +564,20 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Hide-on-scroll navbar (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.25s ease;
+    /* If your page content slides under the navbar, add top padding to body:
+       body { padding-top: 64px; }  */
+  }
+  .navbar--hidden {
+    transform: translateY(-100%);
+  }
+}
