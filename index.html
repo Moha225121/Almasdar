@@ -8,6 +8,9 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,29 +18,52 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <ul>
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#vision">الرؤية</a></li>
-        <li><a href="#mission">الرسالة</a></li>
-        <li><a href="#goals">الأهداف</a></li>
-        <li><a href="#brands">العلامات</a></li>
-        <li><a href="#products">المنتجات</a></li>
-        <li><a href="#contact">التواصل</a></li>
-    </ul>
+    <div class="nav-container">
+        <ul class="nav-menu">
+            <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="#about" data-i18n="nav.about">من نحن</a></li>
+            <li><a href="#vision" data-i18n="nav.vision">الرؤية</a></li>
+            <li><a href="#mission" data-i18n="nav.mission">الرسالة</a></li>
+            <li><a href="#goals" data-i18n="nav.goals">الأهداف</a></li>
+            <li><a href="#brands" data-i18n="nav.brands">العلامات</a></li>
+            <li><a href="#products" data-i18n="nav.products">المنتجات</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">التواصل</a></li>
+        </ul>
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN</button>
+    </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero reveal" id="home">
-    <img src="images/almadar-logo.png" class="logo" alt="شركة المصدر العالمية">
-    <h1>شركة المصدر العالمية</h1>
-    <p>لبيع وتغيير الزيوت الأمريكية</p>
+<header class="hero" id="home" data-aos="fade-down">
+    <div class="hero-content">
+        <img src="images/almadar-logo.png" class="logo" alt="شركة المصدر العالمية">
+        <div class="hero-badge">
+            <span class="badge-icon">⭐</span>
+            <span data-i18n="hero.badge">وكالة معتمدة</span>
+        </div>
+        <h1 data-i18n="hero.title">شركة المصدر العالمية</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">لبيع وتغيير الزيوت الأمريكية</p>
+        
+        <div class="hero-pills">
+            <span class="pill" data-i18n="hero.pill1">🏆 جودة عالمية</span>
+            <span class="pill" data-i18n="hero.pill2">✅ منتجات أصلية</span>
+            <span class="pill" data-i18n="hero.pill3">🚀 خدمة سريعة</span>
+        </div>
+        
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">تواصل معنا</a>
+            <a href="https://wa.me/218919893322" class="btn btn-whatsapp" target="_blank">
+                <span>📱</span>
+                <span data-i18n="hero.cta2">واتساب</span>
+            </a>
+        </div>
+    </div>
 </header>
 
 <!-- ABOUT -->
-<section class="about reveal" id="about">
-    <h2>من نحن</h2>
-    <p>
+<section class="about" id="about" data-aos="fade-up">
+    <h2 data-i18n="about.title">من نحن</h2>
+    <p data-i18n="about.text">
         شركة المصدر العالمية هي وكالة معتمدة لزيوت
         <strong>Infinity الأمريكية</strong>،
         وموزع معتمد لزيوت <strong>Mobil</strong>.
@@ -47,9 +73,9 @@
 </section>
 
 <!-- VISION -->
-<section class="vision reveal" id="vision">
-    <h2>رؤيتنا</h2>
-    <p>
+<section class="vision" id="vision" data-aos="fade-up">
+    <h2 data-i18n="vision.title">رؤيتنا</h2>
+    <p data-i18n="vision.text">
         أن تكون شركة المصدر العالمية الخيار الأول في ليبيا
         في مجال توريد وتوزيع زيوت ومواد التشحيم عالية الجودة،
         وأن نرسخ مكانتنا كشريك موثوق للعلامات التجارية العالمية.
@@ -57,9 +83,9 @@
 </section>
 
 <!-- MISSION -->
-<section class="mission reveal" id="mission">
-    <h2>رسالتنا</h2>
-    <p>
+<section class="mission" id="mission" data-aos="fade-up">
+    <h2 data-i18n="mission.title">رسالتنا</h2>
+    <p data-i18n="mission.text">
         تقديم زيوت ومواد تشحيم أمريكية وعالمية أصلية
         وفق أعلى معايير الجودة، مع الالتزام بالمصداقية
         وخدمة العملاء والمساهمة في إطالة العمر التشغيلي
@@ -68,82 +94,338 @@
 </section>
 
 <!-- GOALS -->
-<section class="goals reveal" id="goals">
-    <h2>أهدافنا</h2>
-    <ul>
-        <li>توفير منتجات أصلية ومعتمدة.</li>
-        <li>تعزيز ثقة العملاء.</li>
-        <li>توسيع شبكة الفروع داخل ليبيا.</li>
-        <li>دعم قطاع السيارات والمعدات الثقيلة.</li>
-        <li>بناء شراكات استراتيجية.</li>
-        <li>رفع مستوى خدمات ما بعد البيع.</li>
-    </ul>
+<section class="goals" id="goals" data-aos="fade-up">
+    <h2 data-i18n="goals.title">أهدافنا</h2>
+    <div class="goals-grid">
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal1">توفير منتجات أصلية ومعتمدة.</p>
+        </div>
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal2">تعزيز ثقة العملاء.</p>
+        </div>
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal3">توسيع شبكة الفروع داخل ليبيا.</p>
+        </div>
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal4">دعم قطاع السيارات والمعدات الثقيلة.</p>
+        </div>
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal5">بناء شراكات استراتيجية.</p>
+        </div>
+        <div class="goal-card" data-aos="zoom-in" data-aos-delay="600">
+            <div class="goal-icon">✓</div>
+            <p data-i18n="goals.goal6">رفع مستوى خدمات ما بعد البيع.</p>
+        </div>
+    </div>
 </section>
 
 <!-- BRANDS -->
-<section class="brands-section reveal" id="brands">
-    <h2>العلامات التجارية</h2>
+<section class="brands-section" id="brands" data-aos="fade-up">
+    <h2 data-i18n="brands.title">العلامات التجارية</h2>
     <div class="brands">
-        <div class="card"><img src="images/infinity.png"><span class="badge gold">Infinity</span></div>
-        <div class="card"><img src="images/mobil.png"><span class="badge green">Mobil</span></div>
-        <div class="card"><img src="images/quaker.png"><span class="badge green">Quaker State</span></div>
-        <div class="card"><img src="images/pennzoil.png"><span class="badge red">Pennzoil</span></div>
-        <div class="card"><img src="images/castrol.png"><span class="badge red">Castrol</span></div>
-        <div class="card"><img src="images/liquimoly.png"><span class="badge blue">Liqui Moly</span></div>
+        <div class="card" data-aos="flip-left" data-aos-delay="100">
+            <img src="images/infinity.png" alt="Infinity">
+            <span class="badge gold">Infinity</span>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="200">
+            <img src="images/mobil.png" alt="Mobil">
+            <span class="badge green">Mobil</span>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="300">
+            <img src="images/quaker.png" alt="Quaker State">
+            <span class="badge green">Quaker State</span>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="400">
+            <img src="images/pennzoil.png" alt="Pennzoil">
+            <span class="badge red">Pennzoil</span>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="500">
+            <img src="images/castrol.png" alt="Castrol">
+            <span class="badge red">Castrol</span>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="600">
+            <img src="images/liquimoly.png" alt="Liqui Moly">
+            <span class="badge blue">Liqui Moly</span>
+        </div>
     </div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="products reveal" id="products">
-    <h2>منتجاتنا</h2>
+<section class="products" id="products" data-aos="fade-up">
+    <h2 data-i18n="products.title">منتجاتنا</h2>
     <div class="product-grid">
-        <div class="product">زيوت محركات</div>
-        <div class="product">زيوت ناقل حركة (قير)</div>
-        <div class="product">زيوت هيدروليك</div>
-        <div class="product">سوائل فرامل</div>
-        <div class="product">شحم صناعي</div>
+        <div class="product" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-icon">🛢️</div>
+            <div data-i18n="products.product1">زيوت محركات</div>
+        </div>
+        <div class="product" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-icon">⚙️</div>
+            <div data-i18n="products.product2">زيوت ناقل حركة (قير)</div>
+        </div>
+        <div class="product" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-icon">💧</div>
+            <div data-i18n="products.product3">زيوت هيدروليك</div>
+        </div>
+        <div class="product" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-icon">🚗</div>
+            <div data-i18n="products.product4">سوائل فرامل</div>
+        </div>
+        <div class="product" data-aos="fade-up" data-aos-delay="500">
+            <div class="product-icon">🔧</div>
+            <div data-i18n="products.product5">شحم صناعي</div>
+        </div>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact reveal" id="contact">
-    <h2>التواصل</h2>
+<section class="contact" id="contact" data-aos="fade-up">
+    <h2 data-i18n="contact.title">التواصل</h2>
 
-    <p><strong>📍 مقر الشركة الرئيسي:</strong><br>
-        بنغازي – طريق النهر – مقابل المنطقة الصناعية
-    </p>
+    <div class="contact-grid">
+        <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="contact-icon">📍</div>
+            <h3 data-i18n="contact.location.title">مقر الشركة الرئيسي:</h3>
+            <p data-i18n="contact.location.text">بنغازي – طريق النهر – مقابل المنطقة الصناعية</p>
+        </div>
 
-    <p><strong>🏢 فروع ومراكز الخدمة:</strong><br>
-        • شارع الثانوية الفنية قرب هنقر بنغازي<br>
-        • طريق النهر مقابل صالة فوناس الرياضية
-    </p>
+        <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="contact-icon">🏢</div>
+            <h3 data-i18n="contact.branches.title">فروع ومراكز الخدمة:</h3>
+            <p data-i18n="contact.branches.text1">• شارع الثانوية الفنية قرب هنقر بنغازي</p>
+            <p data-i18n="contact.branches.text2">• طريق النهر مقابل صالة فوناس الرياضية</p>
+        </div>
 
-    <p><strong>📞 أرقام التواصل:</strong><br>
-        0919893322<br>
-        0910960870
-    </p>
+        <div class="contact-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="contact-icon">📞</div>
+            <h3 data-i18n="contact.phone.title">أرقام التواصل:</h3>
+            <p><a href="tel:+218919893322">0919893322</a></p>
+            <p><a href="tel:+218910960870">0910960870</a></p>
+        </div>
+    </div>
 </section>
 
 <footer>
-    © 2025 شركة المصدر العالمية
+    <span data-i18n="footer.text">© 2025 شركة المصدر العالمية</span>
 </footer>
 
-<a href="https://wa.me/218919893322" class="whatsapp" target="_blank">واتساب</a>
+<a href="https://wa.me/218919893322" class="whatsapp" target="_blank">
+    <span data-i18n="whatsapp.text">واتساب</span>
+</a>
 
-<!-- SCROLL ANIMATION -->
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- I18N & ANIMATIONS -->
 <script>
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll() {
-        const windowHeight = window.innerHeight;
-        reveals.forEach(el => {
-            const top = el.getBoundingClientRect().top;
-            if (top < windowHeight - 80) {
-                el.classList.add('active');
+    // Initialize AOS with light settings (check if loaded)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-in-out'
+        });
+    }
+
+    // Current language state
+    let currentLang = 'ar';
+
+    // Translations
+    const translations = {
+        ar: {
+            nav: {
+                home: 'الرئيسية',
+                about: 'من نحن',
+                vision: 'الرؤية',
+                mission: 'الرسالة',
+                goals: 'الأهداف',
+                brands: 'العلامات',
+                products: 'المنتجات',
+                contact: 'التواصل'
+            },
+            hero: {
+                badge: 'وكالة معتمدة',
+                title: 'شركة المصدر العالمية',
+                subtitle: 'لبيع وتغيير الزيوت الأمريكية',
+                pill1: '🏆 جودة عالمية',
+                pill2: '✅ منتجات أصلية',
+                pill3: '🚀 خدمة سريعة',
+                cta1: 'تواصل معنا',
+                cta2: 'واتساب'
+            },
+            about: {
+                title: 'من نحن',
+                text: 'شركة المصدر العالمية هي وكالة معتمدة لزيوت Infinity الأمريكية، وموزع معتمد لزيوت Mobil. نعمل على توفير أفضل الزيوت ومواد التشحيم الأصلية لدعم قطاع السيارات والمعدات في السوق الليبي.'
+            },
+            vision: {
+                title: 'رؤيتنا',
+                text: 'أن تكون شركة المصدر العالمية الخيار الأول في ليبيا في مجال توريد وتوزيع زيوت ومواد التشحيم عالية الجودة، وأن نرسخ مكانتنا كشريك موثوق للعلامات التجارية العالمية.'
+            },
+            mission: {
+                title: 'رسالتنا',
+                text: 'تقديم زيوت ومواد تشحيم أمريكية وعالمية أصلية وفق أعلى معايير الجودة، مع الالتزام بالمصداقية وخدمة العملاء والمساهمة في إطالة العمر التشغيلي للمركبات والمعدات.'
+            },
+            goals: {
+                title: 'أهدافنا',
+                goal1: 'توفير منتجات أصلية ومعتمدة.',
+                goal2: 'تعزيز ثقة العملاء.',
+                goal3: 'توسيع شبكة الفروع داخل ليبيا.',
+                goal4: 'دعم قطاع السيارات والمعدات الثقيلة.',
+                goal5: 'بناء شراكات استراتيجية.',
+                goal6: 'رفع مستوى خدمات ما بعد البيع.'
+            },
+            brands: {
+                title: 'العلامات التجارية'
+            },
+            products: {
+                title: 'منتجاتنا',
+                product1: 'زيوت محركات',
+                product2: 'زيوت ناقل حركة (قير)',
+                product3: 'زيوت هيدروليك',
+                product4: 'سوائل فرامل',
+                product5: 'شحم صناعي'
+            },
+            contact: {
+                title: 'التواصل',
+                location: {
+                    title: 'مقر الشركة الرئيسي:',
+                    text: 'بنغازي – طريق النهر – مقابل المنطقة الصناعية'
+                },
+                branches: {
+                    title: 'فروع ومراكز الخدمة:',
+                    text1: '• شارع الثانوية الفنية قرب هنقر بنغازي',
+                    text2: '• طريق النهر مقابل صالة فوناس الرياضية'
+                },
+                phone: {
+                    title: 'أرقام التواصل:'
+                }
+            },
+            footer: {
+                text: '© 2025 شركة المصدر العالمية'
+            },
+            whatsapp: {
+                text: 'واتساب'
+            }
+        },
+        en: {
+            nav: {
+                home: 'Home',
+                about: 'About',
+                vision: 'Vision',
+                mission: 'Mission',
+                goals: 'Goals',
+                brands: 'Brands',
+                products: 'Products',
+                contact: 'Contact'
+            },
+            hero: {
+                badge: 'Authorized Agency',
+                title: 'Almasdar International Company',
+                subtitle: 'For Selling and Changing American Oils',
+                pill1: '🏆 World Quality',
+                pill2: '✅ Original Products',
+                pill3: '🚀 Fast Service',
+                cta1: 'Contact Us',
+                cta2: 'WhatsApp'
+            },
+            about: {
+                title: 'About Us',
+                text: 'Almasdar International Company is an authorized agency for American Infinity oils, and an authorized distributor for Mobil oils. We work to provide the best original oils and lubricants to support the automotive and equipment sector in the Libyan market.'
+            },
+            vision: {
+                title: 'Our Vision',
+                text: 'To be the first choice in Libya in the field of supplying and distributing high-quality oils and lubricants, and to establish our position as a trusted partner for international brands.'
+            },
+            mission: {
+                title: 'Our Mission',
+                text: 'To provide original American and international oils and lubricants according to the highest quality standards, with commitment to credibility, customer service, and contributing to extending the operational life of vehicles and equipment.'
+            },
+            goals: {
+                title: 'Our Goals',
+                goal1: 'Provide original and certified products.',
+                goal2: 'Enhance customer trust.',
+                goal3: 'Expand branch network within Libya.',
+                goal4: 'Support automotive and heavy equipment sector.',
+                goal5: 'Build strategic partnerships.',
+                goal6: 'Raise after-sales service level.'
+            },
+            brands: {
+                title: 'Our Brands'
+            },
+            products: {
+                title: 'Our Products',
+                product1: 'Engine Oils',
+                product2: 'Transmission Oils',
+                product3: 'Hydraulic Oils',
+                product4: 'Brake Fluids',
+                product5: 'Industrial Grease'
+            },
+            contact: {
+                title: 'Contact',
+                location: {
+                    title: 'Main Headquarters:',
+                    text: 'Benghazi – Al-Nahar Road – Opposite the Industrial Zone'
+                },
+                branches: {
+                    title: 'Branches and Service Centers:',
+                    text1: '• Al-Thanawiya Al-Fanniya Street near Benghazi Hangar',
+                    text2: '• Al-Nahar Road opposite Funas Sports Hall'
+                },
+                phone: {
+                    title: 'Contact Numbers:'
+                }
+            },
+            footer: {
+                text: '© 2025 Almasdar International Company'
+            },
+            whatsapp: {
+                text: 'WhatsApp'
+            }
+        }
+    };
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        updateLanguage();
+    }
+
+    function updateLanguage() {
+        const html = document.documentElement;
+        const langToggle = document.getElementById('langToggle');
+        
+        if (currentLang === 'en') {
+            html.setAttribute('lang', 'en');
+            html.setAttribute('dir', 'ltr');
+            langToggle.textContent = 'AR';
+        } else {
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+            langToggle.textContent = 'EN';
+        }
+
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const keys = key.split('.');
+            let value = translations[currentLang];
+            
+            for (const k of keys) {
+                value = value[k];
+            }
+            
+            if (value) {
+                element.textContent = value;
             }
         });
     }
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
+
+    // Initialize language on page load
+    updateLanguage();
 </script>
 
 </body>
