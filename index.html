@@ -300,12 +300,17 @@
                 if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
                     node.placeholder = value;
                 } else {
-                    node.textContent = value;
+                    // Handle multiline content with <br> tags
+                    if (value.includes('<br>')) {
+                        node.innerHTML = value;
+                    } else {
+                        node.textContent = value;
+                    }
                 }
             }
         });
         document.title = translations[lang]['meta.title'];
-        htmlEl.lang = lang === 'ar' ? 'ar' : 'en';
+        htmlEl.lang = lang;
         htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
         langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
         document.body.classList.toggle('rtl', lang === 'ar');

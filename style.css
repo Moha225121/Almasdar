@@ -169,11 +169,3 @@ footer { padding: 20px 24px 28px; border-top: 1px solid rgba(255,255,255,0.06); 
     .hero-ctas { width: 100%; }
     .btn { width: auto; }
 }
-
-body.rtl { direction: rtl; }
-body:not(.rtl) {
-    direction: ltr;
-}
-
-body:not(.rtl) .navbar { flex-direction: row; }
-body:not(.rtl) .nav-links { text-align: left; }
