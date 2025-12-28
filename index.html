@@ -422,8 +422,42 @@
 
     // Initialize language on page load
     updateLanguage();
+     (function() {
+    var navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    var lastY = window.pageYOffset || 0;
+    var ticking = false;
+    var delta = 5;          // scroll sensitivity
+    var showAtTop = 64;     // show when near top
+
+    function onScroll() {
+      var currentY = window.pageYOffset || 0;
+      var diff = currentY - lastY;
+
+      if (Math.abs(diff) > delta) {
+        if (diff > 0 && currentY > showAtTop) {
+          // scrolling down
+          navbar.classList.add('navbar--hidden');
+        } else {
+          // scrolling up
+          navbar.classList.remove('navbar--hidden');
+        }
+        lastY = currentY;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
 </script>
 
 </body>
 </html>
+
 
